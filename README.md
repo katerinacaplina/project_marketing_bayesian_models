@@ -29,11 +29,15 @@ A rule-of-thumb for a minimum number of data points for a stable linear regressi
 When fitting a linear regression model, highly correlated input variables can lead to coefficient estimates with high variance. This in turn, can lead to bad attribution of sales to the ad channel.
 
 Benefits of the Bayesian approach include:
-• Ability to use informative priors for the parameters, where the informative priors can come
-from a variety of sources
+• Ability to use informative priors for the parameters, where the informative priors can come from a variety of sources  (ensure that marketing activity coefficients are non-negative)
 • Ability to handle complicated models 
 • Ability to report on both parameter and model uncertainty
 • Ability to propagate uncertainty to optimization statements
+• Ability to learn saturation and decay parameters as part of the model fitting process; estimate uncertainty in functions (typically would require iterative optimization and manual tuning)
+
+PyStan
+
+Often, it is not practical to analytically compute the required distributions, and stochastic sampling methods such as Markov chain Monte Carlo (MCMC) are used instead. One way of implementing MCMC methods in a transparent and efficient way is via the probabilistic programming language, Stan.
 
 
 
@@ -60,7 +64,7 @@ from a variety of sources
 
 Модель комплекса маркетинга (MMM) сообщает вам, какой процент вашего маркетингового бюджета следует выделить на каждый конкретный канал, в то время как атрибуция с несколькими касаниями показывает вам, как распределять ресурсы внутри этих конкретных каналов на детальном уровне.
 
-<b>Simple regression vs Bayesian Methods for Media Mix Modeling</b>
+<b><u>Простая регрессия против Байесовских методов для моделирования медиамикса</u></b>
 
 Обычный подход заключается в том, чтобы ввести медиа-переменные в модель аддитивно.
 
@@ -72,8 +76,14 @@ from a variety of sources
 
 Преимущества байесовского подхода включают в себя:
 • Возможность использовать информативные априорные значения для параметров, где информативные априорные значения могут поступать
-из различных источников.
+из различных источников (убедитесь, что коэффициенты маркетинговой активности неотрицательны)
 • Способность работать со сложными моделями
 • Возможность сообщать как о параметрах, так и о неопределенности модели
 • Возможность распространения неопределенности на оптимизационные утверждения
+• Возможность изучения параметров насыщения и затухания в рамках процесса подгонки модели; оценка неопределенности в функциях (обычно требуется итеративная оптимизация и ручная настройка)
+
+PyStan
+
+Часто нецелесообразно аналитически вычислять требуемые распределения, и вместо этого используются методы стохастической выборки, такие как цепь Маркова Монте-Карло (MCMC). Одним из способов прозрачной и эффективной реализации методов MCMC является вероятностный язык программирования Stan.
+
 
