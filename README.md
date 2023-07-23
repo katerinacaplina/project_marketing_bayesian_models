@@ -29,10 +29,15 @@ A rule-of-thumb for a minimum number of data points for a stable linear regressi
 When fitting a linear regression model, highly correlated input variables can lead to coefficient estimates with high variance. This in turn, can lead to bad attribution of sales to the ad channel.
 
 Benefits of the Bayesian approach include:
+
 • Ability to use informative priors for the parameters, where the informative priors can come from a variety of sources  (ensure that marketing activity coefficients are non-negative)
+
 • Ability to handle complicated models 
+
 • Ability to report on both parameter and model uncertainty
+
 • Ability to propagate uncertainty to optimization statements
+
 • Ability to learn saturation and decay parameters as part of the model fitting process; estimate uncertainty in functions (typically would require iterative optimization and manual tuning)
 
 PyStan
@@ -75,11 +80,16 @@ Often, it is not practical to analytically compute the required distributions, a
 При подборе модели линейной регрессии сильно коррелированные входные переменные могут привести к коэффициенту оценки с высокой дисперсией. Это, в свою очередь, может привести к неправильной атрибуции продаж рекламному каналу.
 
 Преимущества байесовского подхода включают в себя:
+
 • Возможность использовать информативные априорные значения для параметров, где информативные априорные значения могут поступать
 из различных источников (убедитесь, что коэффициенты маркетинговой активности неотрицательны)
+
 • Способность работать со сложными моделями
+
 • Возможность сообщать как о параметрах, так и о неопределенности модели
+
 • Возможность распространения неопределенности на оптимизационные утверждения
+
 • Возможность изучения параметров насыщения и затухания в рамках процесса подгонки модели; оценка неопределенности в функциях (обычно требуется итеративная оптимизация и ручная настройка)
 
 PyStan
